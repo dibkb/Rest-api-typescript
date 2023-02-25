@@ -1,0 +1,2 @@
+PORT = 8000
+MONGOURL = "mongodb+srv://dibas9110:zN5Acpn!Paz2+y9@eigen-1.inqxo5y.mongodb.net/?retryWrites=true&w=majority"
