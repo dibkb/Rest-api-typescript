@@ -15,7 +15,7 @@ export const PostModel = mongoose.model("Post", PostScheme);
 export const getAllPosts = () => PostModel.find({});
 export const getPostbyId = (id: string) => PostModel.findById(id);
 export const getPostByAuthor = (authorId: string) =>
-  PostModel.findOne({ author: authorId });
+  PostModel.find({ author: authorId });
 export const deletePostById = (id: string) => PostModel.findByIdAndDelete(id);
 export const updatePostById = (id: string, values: Record<string, any>) =>
   PostModel.findByIdAndUpdate(id, values);
