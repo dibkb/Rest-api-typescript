@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema, Types } from "mongoose";
 const UserSchema = new Schema({
   username: {
     type: String,
@@ -30,6 +30,7 @@ export const getUserBySession = (session: string) =>
   });
 export const createUser = (values: Record<string, any>) =>
   new UserModel(values).save().then((user) => user.toObject());
-export const deleteById = (id: string) => UserModel.findByIdAndDelete(id);
+export const deleteById = (id: Types.ObjectId) =>
+  UserModel.findByIdAndDelete(id);
 export const updateById = (values: Record<string, any>, id: string) =>
   UserModel.findByIdAndUpdate(id, values);
